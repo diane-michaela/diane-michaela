@@ -1,13 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="64" viewBox="0 0 260 64" role="img" aria-label="Click here">
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="64" viewBox="0 0 300 64" role="img" aria-label="Click here">
   <style>
-    .glow { animation: pulse 2.2s ease-in-out infinite; transform-origin: 130px 32px; }
-    @keyframes pulse { 0%,100% { opacity: .0; transform: scale(1); } 50% { opacity: .45; transform: scale(1.06); } }
-    .arrow { animation: nudge 1.4s ease-in-out infinite; }
-    @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+    .glow { animation: pulse 2.2s ease-in-out infinite; transform-origin: 150px 32px; }
+    @keyframes pulse { 0%,100% { opacity: 0; transform: scale(1); } 50% { opacity: .45; transform: scale(1.05); } }
+    .in-left  { animation: toRight 1.4s ease-in-out infinite; }
+    .in-right { animation: toLeft  1.4s ease-in-out infinite; }
+    @keyframes toRight { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+    @keyframes toLeft  { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-6px); } }
   </style>
-  <rect class="glow" x="6" y="6" width="248" height="52" rx="26" fill="#2a52c9"/>
-  <rect x="10" y="10" width="240" height="44" rx="22" fill="#2a52c9"/>
-  <text x="118" y="39" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
+  <rect class="glow" x="6" y="6" width="288" height="52" rx="26" fill="#2a52c9"/>
+  <rect x="10" y="10" width="280" height="44" rx="22" fill="#2a52c9"/>
+  <!-- arrow before the text, pointing at it -->
+  <g class="in-left"><path d="M42 32 h22 m-8 -8 l8 8 l-8 8" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="150" y="39" text-anchor="middle" font-family="Inter, -apple-system, Segoe UI, Helvetica, Arial, sans-serif"
         font-size="19" font-weight="700" fill="#ffffff">Click here</text>
-  <g class="arrow"><path d="M178 32 h22 m-8 -8 l8 8 l-8 8" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <!-- arrow after the text, turned back toward it -->
+  <g class="in-right"><path d="M258 32 h-22 m8 -8 l-8 8 l8 8" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
 </svg>
